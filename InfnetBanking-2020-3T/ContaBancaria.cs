@@ -11,8 +11,8 @@ namespace InfnetBanking_2020_3T
         private double saldo; // campo privado: apenas a própria classe consegue acessar.
 
         // Propriedade (C#) - https://docs.microsoft.com/pt-br/dotnet/csharp/programming-guide/classes-and-structs/properties
-        // Propriedades serão, em geral, públicas.
-        public double Saldo
+        // Propriedades serão, em geral, públicas. 
+        public double Saldo 
         {
             get
             {
@@ -48,7 +48,7 @@ namespace InfnetBanking_2020_3T
 
         public void Sacar(double valor)
         {
-            if (saldo >= valor)
+            if (saldo >= valor && valor >= 0)
             {
                 saldo -= valor;
                 Console.WriteLine($"Saque finalizado. O novo saldo é de R$ {saldo}.");

@@ -7,6 +7,11 @@ namespace InfnetBanking_2020_3T
     {
         static void Main(string[] args)
         {
+            Aula20200729();
+        }
+
+        static void Aula20200729()
+        {
             // 1. Instanciar objeto do tipo ContaBancaria
             ContaBancaria contaBancaria = new ContaBancaria(); // Construtor padrão da classe
             // O construtor é uma estrutura presente em todas as classes e que sabe instanciar objetos da classe.
