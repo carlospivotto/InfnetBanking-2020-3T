@@ -57,7 +57,7 @@ namespace InfnetBanking
             }
         }
 
-        public void Transferir(double valor, ContaBancaria conta)
+        public virtual void Transferir(double valor, ContaBancaria conta)
         {
             if (valor >= 0 && valor <= saldo)
             {
