@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace InfnetBanking_2020_3T
+namespace InfnetBanking
 {
     public class ContaBancaria
     {
@@ -27,7 +25,7 @@ namespace InfnetBanking_2020_3T
         //Padrão da linguagem: nomes de campos com minúscula; nomes de propriedades com maiúsculas.
         public int Agencia { get; set; }
         public int Numero { get; set; }
-        public string Titular { get; set; }
+        public PessoaFisica Titular { get; set; }
 
         // E para escrever o saldo?
         // Vamos utilizar métodos que contenham as regras de negócio para manipular o saldo.
@@ -68,5 +66,16 @@ namespace InfnetBanking_2020_3T
             }
         }
 
+        public override string ToString()
+        {
+            return $"Agência: {Agencia}\nConta: {Numero}\nTitular: {Titular.ToString()}\nSaldo: R$ {Saldo}";
+
+            /*             
+            Agência: 3652
+            Conta: 30850
+            Titular: Agenor Leopoldo
+            Saldo: R$ 1000             
+             */
+        }
     }
 }

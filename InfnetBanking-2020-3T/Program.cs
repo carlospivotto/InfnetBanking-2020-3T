@@ -1,13 +1,26 @@
 ﻿using System;
 using System.Dynamic;
 
-namespace InfnetBanking_2020_3T
+namespace InfnetBanking
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Aula20200729();
+            Aula20200804();
+        }
+
+        static void Aula20200804()
+        {
+            // 1. Instanciar objeto do tipo ContaBancaria
+            ContaBancaria contaBancaria = new ContaBancaria(); // Construtor padrão da classe
+            
+            // 2. Acessar (ler e/ou escrever) propriedades:
+            contaBancaria.Agencia = 3652;
+            contaBancaria.Numero = 30680;
+            contaBancaria.Titular = new PessoaFisica { Cpf = "00000000000", Nome = "Agenor", Sobrenome = "Leopoldo" };
+            Console.WriteLine(contaBancaria.ToString());
+
         }
 
         static void Aula20200729()
@@ -20,8 +33,8 @@ namespace InfnetBanking_2020_3T
             // 2. Acessar (ler e/ou escrever) propriedades:
             contaBancaria.Agencia = 3652;
             contaBancaria.Numero = 30680;
-            contaBancaria.Titular = "Agenor Leopoldo Fagundes";
-            Console.WriteLine($"Titular: {contaBancaria.Titular}.");
+            //contaBancaria.Titular = "Agenor Leopoldo Fagundes"; --> Troca do tipo da propriedade Titular
+            //Console.WriteLine($"Titular: {contaBancaria.Titular}."); --> Troca do tipo da propriedade Titular
             Console.WriteLine($"Agência: {contaBancaria.Agencia}.");
             Console.WriteLine($"Conta: {contaBancaria.Numero}.");
             Console.WriteLine($"Saldo inicial: {contaBancaria.Saldo}.");
