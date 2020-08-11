@@ -25,7 +25,7 @@ namespace InfnetBanking
         //Padrão da linguagem: nomes de campos com minúscula; nomes de propriedades com maiúsculas.
         public int Agencia { get; set; }
         public int Numero { get; set; }
-        public PessoaFisica Titular { get; set; }
+        public Pessoa Titular { get; set; }
 
         // E para escrever o saldo?
         // Vamos utilizar métodos que contenham as regras de negócio para manipular o saldo.

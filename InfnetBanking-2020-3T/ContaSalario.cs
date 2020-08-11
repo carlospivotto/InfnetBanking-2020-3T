@@ -1,4 +1,6 @@
-﻿namespace InfnetBanking
+﻿using System;
+
+namespace InfnetBanking
 {
     public class ContaSalario : ContaBancaria  // ContaSalario HERDA de ContaBancaria
     {

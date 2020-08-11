@@ -7,10 +7,31 @@ namespace InfnetBanking
     {
         static void Main(string[] args)
         {
-            Aula20200804();
+            Aula20200811();
         }
 
-        static void Aula20200804()
+        static void Aula20200811()
+        {
+            // 1. Instanciar objeto do tipo ContaBancaria
+            ContaBancaria contaBancaria = new ContaBancaria(); // Construtor padrão da classe
+
+            // 2. Acessar (ler e/ou escrever) propriedades:
+            contaBancaria.Agencia = 3652;
+            contaBancaria.Numero = 30680;
+
+            contaBancaria.Titular = new PessoaJuridica
+            {
+                RazaoSocial = "Infnet Educação LTDA.",
+                NomeFantasia = "Instituto Infnet",
+                CadastroPessoa = "00.673.757/0001-46",
+                DataNascimento = new DateTime(1994, 10, 25),
+                Endereco = "Rua São José, 90, 2º andar\nCentro, Rio de Janeiro, RJ\nCEP 20010-020"
+            };
+
+            Console.WriteLine("=== Dados da Conta ===");
+            Console.WriteLine(contaBancaria.ToString());
+        }
+        /*static void Aula20200804()
         {
             // 1. Instanciar objeto do tipo ContaBancaria
             ContaBancaria contaBancaria = new ContaBancaria(); // Construtor padrão da classe
@@ -21,7 +42,7 @@ namespace InfnetBanking
             contaBancaria.Titular = new PessoaFisica { Cpf = "00000000000", Nome = "Agenor", Sobrenome = "Leopoldo" };
             Console.WriteLine(contaBancaria.ToString());
 
-        }
+        }*/
 
         static void Aula20200729()
         {
