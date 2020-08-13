@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace InfnetBanking
 {
@@ -18,7 +19,9 @@ namespace InfnetBanking
             }
         }
 
-        public string Endereco { get; set; }
+        // Ref. programadores Python: listas de Python
+        // Ref. programadores Java: java.util.ArrayList<>
+        public List<Endereco> Enderecos { get; set; }
 
         public DateTime DataNascimento { get; set; }
 

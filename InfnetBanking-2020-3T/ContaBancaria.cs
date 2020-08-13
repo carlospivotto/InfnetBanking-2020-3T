@@ -4,6 +4,26 @@ namespace InfnetBanking
 {
     public class ContaBancaria
     {
+        // Um construtor que recebe, como parâmetros, agência, número da conta e titular:
+        public ContaBancaria(int agencia, int numero, Pessoa titular)
+        {
+            Agencia = agencia;
+            Numero = numero;
+            Titular = titular;
+            this.saldo = 0.0; 
+        }
+
+        // Um construtor que recebe, como parâmetros, agência, número da conta, saldo e titular:
+        // Este construtor remete ao construtor anterior e, dentro do seu escopo, apenas "completa" a instância com a atribuição do saldo
+        public ContaBancaria(int agencia, int numero, double saldo, Pessoa titular) : this(agencia, numero, titular)
+        {
+            this.saldo = saldo;
+        }
+
+        /* A partir do momento em que se explicita um construtor diferente do construtor padrão (sem parâmetros),
+         * este deixa de existir. Para que ele seja novamente reconhecido, torna-se necessário explicitá-lo. */
+        //public ContaBancaria() { }
+
         // Classes possuem membros
         // Membros podem ser campos/propriedades ou métodos.
         private double saldo; // campo privado: apenas a própria classe consegue acessar.

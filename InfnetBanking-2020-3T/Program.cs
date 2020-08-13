@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Dynamic;
 
 namespace InfnetBanking
@@ -7,10 +8,28 @@ namespace InfnetBanking
     {
         static void Main(string[] args)
         {
-            Aula20200811();
+            Aula20200813();
         }
 
-        static void Aula20200811()
+        static void Aula20200813()
+        {
+            Pessoa titular = new PessoaFisica
+            {
+                CadastroPessoa = "00000000000",
+                Nome = "Fulano",
+                Sobrenome = "Beltrano",
+                DataNascimento = new DateTime(1970, 1, 1),
+                Enderecos = new List<Endereco>() // criando uma lista (sem o new, dará erro) 
+            };
+
+            titular.Enderecos.Add(new Endereco { TipoLogradouro="Rua", Logradouro="São José", Numero="90" });
+            titular.Enderecos.Add(new Endereco { TipoLogradouro = "Rua", Logradouro = "do Rosário", Numero = "134" });
+
+            ContaBancaria contaBancaria = new ContaBancaria(3652, 20839, titular);
+            Console.WriteLine(contaBancaria.ToString());
+        }
+
+        /* static void Aula20200811()
         {
             // 1. Instanciar objeto do tipo ContaBancaria
             ContaBancaria contaBancaria = new ContaBancaria(); // Construtor padrão da classe
@@ -30,7 +49,7 @@ namespace InfnetBanking
 
             Console.WriteLine("=== Dados da Conta ===");
             Console.WriteLine(contaBancaria.ToString());
-        }
+        } */
         /*static void Aula20200804()
         {
             // 1. Instanciar objeto do tipo ContaBancaria
@@ -44,7 +63,7 @@ namespace InfnetBanking
 
         }*/
 
-        static void Aula20200729()
+        /*static void Aula20200729()
         {
             // 1. Instanciar objeto do tipo ContaBancaria
             ContaBancaria contaBancaria = new ContaBancaria(); // Construtor padrão da classe
@@ -80,6 +99,6 @@ namespace InfnetBanking
             contaBancaria.Transferir(100, contaBancaria2);
             Console.WriteLine($"Saldo da primeira conta: {contaBancaria.Saldo}");
             Console.WriteLine($"Saldo da segunda conta: {contaBancaria2.Saldo}");
-        }
+        }*/
     }
 }

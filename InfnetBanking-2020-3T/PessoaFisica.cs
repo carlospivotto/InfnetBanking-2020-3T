@@ -15,7 +15,12 @@ namespace InfnetBanking
 
         public override string ToString()
         {
-            return $"{Nome} {Sobrenome}";
+            string resultado = $"{Nome} {Sobrenome}\n\nEndereços cadastrados:\n";
+            foreach (var e in Enderecos)
+            {
+                resultado += $"• {e.ToString()} \n";
+            }
+            return resultado;
         }
 
         public override bool ValidarCadastroPessoa(string value)
